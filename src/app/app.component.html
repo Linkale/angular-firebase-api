@@ -1,7 +1,6 @@
-<mat-toolbar>
-  <span>My Application</span>
-</mat-toolbar>
+<app-toolbar></app-toolbar>
 
+<br>
 <form #newUser="ngForm" (ngSubmit)="addUser(newUser)">
   <label>Pseudo</label>
   <input type="text" name="pseudo" id="pseudo" ngModel>
@@ -11,6 +10,7 @@
   <input type="password" name="password" id="password" ngModel>
   <button type="submit"> Save </button>
 </form>
+<br>
 
 <ul>
   <li *ngFor="let user of usersData | async">
