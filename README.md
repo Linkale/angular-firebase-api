@@ -1,3 +1,6 @@
+# Pierre Landry (Pas de Angular en entreprise)
+⚠️ En construction ⚠️
+
 # AngularFirebaseApi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
