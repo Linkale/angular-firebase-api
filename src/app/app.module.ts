@@ -29,7 +29,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     HomeComponent,
   ],
   imports: [
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule, ReactiveFormsModule, HttpClientModule,
     BrowserModule,  BrowserAnimationsModule, 
     MatToolbarModule, MatIconModule, MatNativeDateModule, MaterialExampleModule, 

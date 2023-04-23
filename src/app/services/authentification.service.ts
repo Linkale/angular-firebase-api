@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { signInWithEmailAndPassword, Auth, authState } from '@angular/fire/auth';
-import { from } from 'rxjs';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { from, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,12 @@ export class AuthentificationService {
 
   login(email: string, password: string) {
     return from(signInWithEmailAndPassword(this.auth, email, password));
+  }
+
+  register(name: string, email: string, password: string) {
+    return from(createUserWithEmailAndPassword(this.auth, email, password))
+      .pipe(switchMap(({user}) => updateProfile(user, {displayName: name}))
+    );
   }
 
   logout() {
