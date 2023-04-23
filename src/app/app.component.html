@@ -1,6 +1,11 @@
 <app-toolbar></app-toolbar>
 
-<br>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+
+<!-- <br>
 <form #newUser="ngForm" (ngSubmit)="addUser(newUser)">
   <label>Pseudo</label>
   <input type="text" name="pseudo" id="pseudo" ngModel>
@@ -18,4 +23,4 @@
     <button (click)="updateUser(user.id)">Edit</button>
     <button (click)="deleteUser(user.id)">Delete</button>
   </li>
-</ul>
+</ul> -->
