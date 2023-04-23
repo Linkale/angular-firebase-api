@@ -8,6 +8,8 @@ import { AuthentificationService } from 'src/app/services/authentification.servi
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent {
+  user$ = this.authService.currentUser$;
+  
   constructor (
     public authService: AuthentificationService, 
     private router: Router
