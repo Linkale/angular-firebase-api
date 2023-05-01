@@ -1,0 +1,18 @@
+h1 {
+    display: flex;
+    justify-content: center; 
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+}
+
+.firstTable {
+    display:inline-block;
+    margin-right:10px;
+}
+
+.firstTable {
+    display:inline-block;
+}

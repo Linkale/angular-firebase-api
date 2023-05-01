@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { TableComponent } from './components/table/table.component';
  
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    TableComponent,
   ],
   imports: [
     AppRoutingModule,

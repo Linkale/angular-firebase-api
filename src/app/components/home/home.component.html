@@ -1,3 +1,14 @@
 <h1 *ngIf="user$ | async as user">
     Welcome back {{user.email}} !
 </h1>
+
+<div class="align">
+    <div class="firstTable">
+        <label>Matches Running</label>
+        <app-table titleSpecial="matches/running"></app-table>
+    </div>
+    <div class="secondTable">
+        <label>Matches Up coming</label>
+        <app-table titleSpecial="matches/upcoming"></app-table>
+    </div>
+</div>

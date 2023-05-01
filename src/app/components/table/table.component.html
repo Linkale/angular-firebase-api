@@ -1,0 +1,16 @@
+<table border="1" *ngIf="(data | async) as matches">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>status</th>
+            <th>Tournament</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let match of matches">
+            <td>{{match.name}}</td>
+            <td>{{match.status}}</td>
+            <td>{{match.tournament.name}}</td>
+        </tr>
+    </tbody>
+</table>

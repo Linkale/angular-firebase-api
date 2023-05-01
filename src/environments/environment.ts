@@ -7,5 +7,6 @@ export const environment = {
     authDomain: 'angular-firebase-api-53597.firebaseapp.com',
     messagingSenderId: '448815265085',
   },
+  pandascoreKey: 'km18_X74rQFPzD4M5FfT-Iz5Lhy7dJmN7c8DYK_LFcX7kAeZHK8',
   production: false
 }
