@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 import {MaterialExampleModule} from '../../materiale.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
@@ -31,7 +32,7 @@ import { TableComponent } from './components/table/table.component';
     TableComponent,
   ],
   imports: [
-    AppRoutingModule,
+    AppRoutingModule, NgxPaginationModule, 
     FormsModule, ReactiveFormsModule, HttpClientModule,
     BrowserModule,  BrowserAnimationsModule, 
     MatToolbarModule, MatIconModule, MatNativeDateModule, MaterialExampleModule, 

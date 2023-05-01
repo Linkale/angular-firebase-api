@@ -25,6 +25,7 @@
     "flex-layout": "^1.0.1",
     "json-to-ts": "^1.7.0",
     "ng-sidebar": "^9.4.3",
+    "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
