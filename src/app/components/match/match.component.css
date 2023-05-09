@@ -1,0 +1,8 @@
+mat-card.cardStyle {
+    color: white;
+}
+
+.cardTitle {
+    display: flex;
+    justify-content: center; 
+}

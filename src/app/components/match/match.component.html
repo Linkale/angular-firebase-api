@@ -1,0 +1,19 @@
+<div *ngIf="(match | async) as match">
+    <h1>
+        {{match.name}}
+    </h1>
+    <mat-card class="cardStyle">
+        <mat-card-header>
+          <mat-card-title>Actions Buttons</mat-card-title>
+          <mat-card-subtitle>Start</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+        </mat-card-content>
+    </mat-card>
+    {{match |json}}
+</div>

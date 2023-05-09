@@ -29,7 +29,7 @@ export class TableComponent {
     this.data = combineLatest([this.page, this.type])
     .pipe(
       filter(([_,t]) => t !== undefined), 
-      switchMap(([page, title]) => this.pandascore.getDataFromPandaScore(title!, page+1, this.tableSize)),
+      switchMap(([page, title]) => this.pandascore.getMatchesFromPandaScore(title!, page+1, this.tableSize)),
       tap({next:({total}) => {this.count = total} }), map(({matches}) => matches)
     );
   }

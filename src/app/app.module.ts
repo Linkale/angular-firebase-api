@@ -20,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { TableComponent } from './components/table/table.component';
+import { MatchComponent } from './components/match/match.component';
  
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TableComponent } from './components/table/table.component';
     RegisterComponent,
     HomeComponent,
     TableComponent,
+    MatchComponent,
   ],
   imports: [
     AppRoutingModule, NgxPaginationModule, 
