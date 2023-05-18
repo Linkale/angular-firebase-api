@@ -3,7 +3,6 @@ import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { BehaviorSubject, combineLatest, filter, map, Observable, switchMap, tap } from 'rxjs';
 import { PandascoreService } from 'src/app/services/pandascore.service';
-import { Match } from '../models/interfaces';
 
 @Component({
   selector: 'app-table',
@@ -44,10 +43,4 @@ export class TableComponent {
   async goToMatch(idMatch: number) { 
     await this.router.navigateByUrl('/match/'+idMatch);
   }
-
-  // onTableSizeChange(event: any): void {
-  //   this.tableSize = event.target.value;
-  //   this.page = 1;
-  //   this.getArrayOfMatches();
-  // }
 }

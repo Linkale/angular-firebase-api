@@ -1,3 +1,12 @@
+export interface TeamBuild {
+    id: string,
+    number_of_mates : number,
+    description: string,
+    level: string,
+    number_of_hours: number,
+    contact: string,
+}
+
 export interface Match {
     begin_at:              Date;
     detailed_stats:        boolean;

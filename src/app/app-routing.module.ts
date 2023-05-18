@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
 import { MatchComponent } from './components/match/match.component';
+import { TeamBuildComponent } from './components/team-build/team-build.component';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToHome = () => redirectLoggedInTo(['home'])
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    ...canActivate(redirectToLogin)
+  },
+  {
+    path: 'team-build',
+    component: TeamBuildComponent,
     ...canActivate(redirectToLogin)
   },
   {

@@ -1,0 +1,8 @@
+.align {
+    display: flex;
+    justify-content: center;
+}
+
+.formTable {
+    margin-left:20px;
+}

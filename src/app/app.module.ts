@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { TableComponent } from './components/table/table.component';
 import { MatchComponent } from './components/match/match.component';
+import { TeamBuildComponent } from './components/team-build/team-build.component';
  
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MatchComponent } from './components/match/match.component';
     HomeComponent,
     TableComponent,
     MatchComponent,
+    TeamBuildComponent,
   ],
   imports: [
     AppRoutingModule, NgxPaginationModule, 
