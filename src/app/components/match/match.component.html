@@ -4,16 +4,19 @@
     </h1>
     <mat-card class="cardStyle">
         <mat-card-header>
-          <mat-card-title>Actions Buttons</mat-card-title>
-          <mat-card-subtitle>Start</mat-card-subtitle>
+            <mat-card-title>Begin at {{match.begin_at | date:'short'}}</mat-card-title>
+            <mat-card-subtitle>
+                <img *ngIf="match.league.image_url != null" src="{{match.league.image_url}}" width="32" height="32">
+                {{match.league.name}} 
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-            </p>
+            <div *ngIf="match.streams_list">
+                Streams list : 
+                <p *ngFor="let stream of match.streams_list ">
+                    Language : {{stream.language}} -> <a href="{{stream.raw_url}}">Link of the stream</a>
+                </p>
+            </div>
         </mat-card-content>
     </mat-card>
-    {{match |json}}
 </div>
