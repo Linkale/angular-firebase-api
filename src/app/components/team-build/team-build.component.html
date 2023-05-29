@@ -2,7 +2,7 @@
     <div class="form-container mat-elevation-z5">
         <h1>Add team build</h1>
     
-        <form [formGroup]="teamBuildForm" #myForm="ngForm" (ngSubmit)="addTeamBuild(); myForm.resetForm()">
+        <form [formGroup]="teamBuildForm" #addTeamBuildForm="ngForm" (ngSubmit)="addTeamBuild(); addTeamBuildForm.resetForm()">
             <mat-form-field>
                 <input type="number" matInput placeholder="number of mates looking for" formControlName="number_of_mates" />
                 <mat-error *ngIf="number_of_mates?.errors?.['required']">
@@ -35,7 +35,7 @@
             </mat-form-field>
             <div class="center margin-top">
                 <button mat-raised-button color="primary" type="submit">
-                    Create it
+                    {{editMode ? 'Update it' : 'Create it'}}
                 </button>
             </div>
         </form>
@@ -71,7 +71,7 @@
 
             <ng-container matColumnDef="edit">
                 <th mat-header-cell *matHeaderCellDef> Edit</th>
-                <td mat-cell *matCellDef="let element"> <mat-icon>edit</mat-icon> </td>
+                <td mat-cell *matCellDef="let element" (click)="updateTeamBuild(element.id)"> <mat-icon>edit</mat-icon> </td>
             </ng-container>
 
             <ng-container matColumnDef="remove">

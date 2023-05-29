@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { TeamBuild } from '../models/interfaces';
@@ -12,9 +12,9 @@ import { TeamBuild } from '../models/interfaces';
 
 export class TeamBuildComponent {
 
-  teamBuildsData!: Observable<any>;
+  teamBuildsData! : Observable<any>;
   teamBuildsList : TeamBuild[] = [];
-  teamBuildObject: TeamBuild = {
+  teamBuildObject : TeamBuild = {
     id: '',
     number_of_mates : 0,
     description : '',
@@ -23,6 +23,8 @@ export class TeamBuildComponent {
     contact: '',
   };
   displayedColumns: string[] = ['number_of_mates', 'description', 'level', 'number_of_hours', 'contact', 'edit', 'remove'];
+  editMode : boolean = false;
+  currentTeamBuildId : string = '';
 
   teamBuildForm = new FormGroup({
     number_of_mates: new FormControl('', Validators.required),
@@ -69,13 +71,30 @@ export class TeamBuildComponent {
     this.teamBuildObject.number_of_hours = Number(this.teamBuildForm.value.number_of_hours!); 
     this.teamBuildObject.contact = this.teamBuildForm.value.contact!;
 
-    this.data.addTeamBuild(this.teamBuildObject);
-
+    if (!this.editMode) {
+      this.data.addTeamBuild(this.teamBuildObject);
+    } else {
+      this.data.updateTeamBuild(this.currentTeamBuildId ,this.teamBuildObject);
+    }
+    this.currentTeamBuildId = '';
+    this.editMode = false;
     this.teamBuildForm.reset();
   }
 
-  updateTeamBuild() {
-    // to make
+  updateTeamBuild(id: string) {
+    this.data.getTeamBuild(id).then((teamBuildData) => {
+      this.teamBuildForm.setValue({
+        number_of_mates: teamBuildData['number_of_mates'],
+        description: teamBuildData['description'],
+        level: teamBuildData['level'],
+        number_of_hours: teamBuildData['number_of_hours'],
+        contact: teamBuildData['contact'],
+      });
+      this.editMode = true;
+      this.currentTeamBuildId = id;
+    }).catch((error) => {
+      throw new Error("no teamBuild find");
+    });
   }
 
   deleteTeamBuild(id: string) {
