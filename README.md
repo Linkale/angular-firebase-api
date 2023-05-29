@@ -7,6 +7,10 @@ Dans un premier temps il vous faut lancer la commande suivante :
 Puis vous n'avez plus qu'à lancer votre serveur local à l'aide de la commande :
 'ng serve'
 
+Si vous voulez vous connecter à un compte existant : 
+login : admin@admin.com
+password : admin123
+
 ## Description de la structure et des choix de librairies tierces, d'organisation du code
 ## L'API PandaScore
 
